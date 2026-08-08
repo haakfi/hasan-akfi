@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>مرتـكز | MURTAKIZ - للاستشارات وتطوير الأعمال</title>
+
+  <meta name="description" content="مرتـكز للاستشارات وتطوير الأعمال. حلول استراتيجية لتطوير المشاريع والشركات وبناء الكيانات التجارية والاستثمارية.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #123f32;
+      --green-light: #1e5b48;
+      --gold: #b99a55;
+      --gold-light: #d8bd7a;
+      --cream: #f7f4ec;
+      --white: #ffffff;
+      --dark: #17211d;
+      --gray: #68736e;
+      --light: #f5f7f5;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: var(--white);
+      color: var(--dark);
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid #e8e8e8;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: bold;
+      color: var(--green);
+    }
+
+    .logo-symbol {
+      width: 43px;
+      height: 50px;
+      position: relative;
+    }
+
+    .logo-symbol::before,
+    .logo-symbol::after {
+      content: "";
+      position: absolute;
+      border-radius: 50% 50% 10% 50%;
+      transform: rotate(25deg);
+    }
+
+    .logo-symbol::before {
+      width: 18px;
+      height: 42px;
+      right: 18px;
+      top: 4px;
+      background: var(--green);
+    }
+
+    .logo-symbol::after {
+      width: 13px;
+      height: 32px;
+      right: 5px;
+      top: 13px;
+      background: var(--gold);
+    }
+
+    .logo-text strong {
+      display: block;
+      font-size: 25px;
+      letter-spacing: -1px;
+    }
+
+    .logo-text span {
+      display: block;
+      font-size: 11px;
+      color: var(--gray);
+      letter-spacing: 2px;
+      direction: ltr;
+      text-align: right;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    nav a {
+      font-size: 14px;
+      color: #39433f;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .language-btn {
+      border: 1px solid var(--green);
+      background: transparent;
+      color: var(--green);
+      border-radius: 25px;
+      padding: 7px 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 680px;
+      background:
+        linear-gradient(135deg, rgba(18,63,50,.98), rgba(18,63,50,.90)),
+        radial-gradient(circle at 80% 20%, rgba(185,154,85,.35), transparent 35%);
+      color: white;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border: 1px solid rgba(216,189,122,.25);
+      border-radius: 50%;
+      left: -180px;
+      top: -160px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 90px 0;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      font-weight: bold;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+    }
+
+    .hero h2 {
+      font-size: clamp(20px, 3vw, 30px);
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 750px;
+      color: #e6ece8;
+      font-size: 18px;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 27px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.6);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--green);
+    }
+
+    /* Sections */
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-title small {
+      color: var(--gold);
+      font-weight: bold;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      color: var(--green);
+      margin: 8px 0;
+    }
+
+    .section-title p {
+      color: var(--gray);
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* About */
+    .about {
+      background: var(--cream);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      color: var(--green);
+      font-size: 29px;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      color: #58635e;
+      margin-bottom: 15px;
+    }
+
+    .vision-box {
+      background: var(--green);
+      color: white;
+      padding: 45px;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vision-box::after {
+      content: "M";
+      position: absolute;
+      left: 15px;
+      bottom: -50px;
+      font-size: 190px;
+      font-weight: bold;
+      color: rgba(255,255,255,.04);
+    }
+
+    .vision-box h3 {
+      color: var(--gold-light);
+      margin-bottom: 12px;
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service {
+      padding: 30px;
+      border: 1px solid #e5e9e6;
+      border-radius: 16px;
+      background: white;
+      transition: .3s;
+    }
+
+    .service:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(18,63,50,.09);
+      border-color: var(--gold-light);
+    }
+
+    .service-number {
+      color: var(--gold);
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .service h3 {
+      color: var(--green);
+      margin: 10px 0;
+      font-size: 20px;
+    }
+
+    .service p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* Sectors */
+    .sectors {
+      background: var(--light);
+    }
+
+    .sector-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .sector {
+      background: white;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 14px;
+      color: var(--green);
+      font-weight: bold;
+      border: 1px solid #e5e9e6;
+    }
+
+    /* Approach */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .step {
+      text-align: center;
+      position: relative;
+    }
+
+    .step-number {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: var(--green);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .step h3 {
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* Why */
+    .why {
+      background: var(--green);
+      color: white;
+    }
+
+    .why .section-title h2 {
+      color: white;
+    }
+
+    .why .section-title p {
+      color: #d7e0db;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .why-item {
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 16px;
+      background: rgba(255,255,255,.04);
+    }
+
+    .why-item h3 {
+      color: var(--gold-light);
+      margin-bottom: 10px;
+    }
+
+    .why-item p {
+      color: #d9e3de;
+      font-size: 14px;
+    }
+
+    /* Contact */
+    .contact {
+      background: var(--cream);
+    }
+
+    .contact-box {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      background: white;
+      padding: 55px 35px;
+      border-radius: 22px;
+      box-shadow: 0 15px 40px rgba(0,0,0,.06);
+    }
+
+    .contact-box h2 {
+      color: var(--green);
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      color: var(--gray);
+      margin-bottom: 28px;
+    }
+
+    /* Footer */
+    footer {
+      background: #0b2b22;
+      color: white;
+      padding: 45px 0 25px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .footer-brand strong {
+      font-size: 25px;
+    }
+
+    .footer-brand p {
+      color: #b9c7c0;
+      font-size: 13px;
+      max-width: 400px;
+      margin-top: 8px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: #d7e0db;
+      font-size: 13px;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding-top: 20px;
+      color: #9eada6;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    /* English */
+    body.en {
+      direction: ltr;
+      font-family: Arial, sans-serif;
+    }
+
+    body.en .logo-text span {
+      text-align: left;
+    }
+
+    /* Mobile */
+    @media (max-width: 850px) {
+      nav {
+        display: none;
+      }
+
+      .about-grid,
+      .services-grid,
+      .sector-grid,
+      .steps,
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 620px;
+      }
+
+      .hero-content {
+        padding: 70px 0;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .section-title h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+
+    <a href="#home" class="logo">
+      <div class="logo-symbol"></div>
+      <div class="logo-text">
+        <strong id="brandName">مرتـكز</strong>
+        <span>MURTAKIZ</span>
+      </div>
+    </a>
+
+    <nav>
+      <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+      <a href="#about" data-ar="من نحن" data-en="About Us">من نحن</a>
+      <a href="#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a>
+      <a href="#sectors" data-ar="القطاعات" data-en="Sectors">القطاعات</a>
+      <a href="#approach" data-ar="منهجية العمل" data-en="Our Approach">منهجية العمل</a>
+      <a href="#contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
+    </nav>
+
+    <button class="language-btn" onclick="toggleLanguage()" id="languageButton">
+      English
+    </button>
+
+  </div>
+</header>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+
+      <div class="eyebrow" id="heroEyebrow">
+        للاستشارات وتطوير الأعمال
+      </div>
+
+      <h1 id="heroTitle">
+        مرتـكز<br>
+        <span>نبني الأساس، ونقود النمو</span>
+      </h1>
+
+      <h2 id="heroSubtitle">
+        حلول استراتيجية لبناء وتطوير الكيانات التجارية والاستثمارية
+      </h2>
+
+      <p id="heroText">
+        نساعد الأفراد والمؤسسات والشركات والمستثمرين على تحويل الأفكار
+        والفرص إلى مشاريع وكيانات ناجحة من خلال حلول متكاملة تبدأ من
+        الدراسة والتخطيط، وصولاً إلى التطوير والنمو والاستدامة.
+      </p>
+
+      <div class="buttons">
+        <a href="#contact" class="btn btn-primary" id="heroButton1">
+          اطلب استشارة
+        </a>
+
+        <a href="#services" class="btn btn-outline" id="heroButton2">
+          استكشف خدماتنا
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+
+    <div class="section-title">
+      <small id="aboutSmall">ABOUT MURTAKIZ</small>
+      <h2 id="aboutTitle">من نحن</h2>
+      <p id="aboutIntro">
+        شريك استراتيجي في تطوير الأعمال وبناء الكيانات المؤسسية.
+      </p>
+    </div>
+
+    <div class="about-grid">
+
+      <div class="about-text">
+        <h3 id="aboutHeading">
+          نضع الأساس الذي يساعد أعمالك على النمو
+        </h3>
+
+        <p id="aboutP1">
+          مرتـكز جهة متخصصة في الاستشارات الإدارية وتطوير الأعمال
+          والاستشارات الاستثمارية، تقدم حلولاً عملية تساعد العملاء
+          على تطوير أعمالهم وتحقيق أهدافهم.
+        </p>
+
+        <p id="aboutP2">
+          نعمل مع الأفراد والمؤسسات والشركات والمستثمرين المحليين
+          والدوليين في مختلف مراحل المشروع، من دراسة الفرصة والتخطيط
+          وحتى التطوير وإعادة الهيكلة والتوسع.
+        </p>
+      </div>
+
+      <div class="vision-box">
+        <h3 id="visionTitle">رؤيتنا</h3>
+        <p id="visionText">
+          أن نكون شريكاً استراتيجياً موثوقاً في تطوير الأعمال وبناء
+          كيانات أكثر قوة وكفاءة واستدامة.
+        </p>
+
+        <br>
+
+        <h3 id="missionTitle">رسالتنا</h3>
+        <p id="missionText">
+          تمكين العملاء من اتخاذ قرارات أفضل وبناء أعمال أكثر تنظيماً
+          وقدرة على النمو والمنافسة.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+
+    <div class="section-title">
+      <small id="servicesSmall">OUR SERVICES</small>
+      <h2 id="servicesTitle">خدماتنا</h2>
+      <p id="servicesIntro">
+        حلول متكاملة تغطي مختلف مراحل تطوير الأعمال.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service">
+        <span class="service-number">01</span>
+        <h3 id="s1Title">تطوير الأعمال</h3>
+        <p id="s1Text">
+          تطوير الاستراتيجيات والفرص التجارية وبناء خطط النمو والتوسع.
+        </p>
+      </div>
+
+      <div class="service">
+        <span class="service-number">02</span>
+        <h3 id="s2Title">دراسات المشاريع والاستثمار</h3>
+        <p id="s2Text">
+          دراسة وتقييم المشاريع والفرص الاستثمارية وتحليل الجدوى والمخاطر.
+        </p>
+      </div>
+
+      <div class="service">
+        <span class="service-number">03</span>
+        <h3 id="s3Title">إعادة الهيكلة والتطوير المؤسسي</h3>
+        <p id="s3Text">
+          تطوير الهياكل التنظيمية والأنظمة الداخلية وتحسين الكفاءة التشغيلية.
+        </p>
+      </div>
+
+      <div class="service">
+        <span class="service-number">04</span>
+        <h3 id="s4Title">التحول المؤسسي</h3>
+        <p id="s4Text">
+          دعم المنشآت في التحول والنمو وبناء كيانات أكثر تنظيماً وجاهزية.
+        </p>
+      </div>
+
+      <div class="service">
+        <span class="service-number">05</span>
+        <h3 id="s5Title">التخطيط الاستراتيجي والتشغيلي</h3>
+        <p id="s5Text">
+          إعداد الخطط الاستراتيجية والتشغيلية والتسويقية وربطها بالأهداف.
+        </p>
+      </div>
+
+      <div class="service">
+        <span class="service-number">06</span>
+        <h3 id="s6Title">الاستشارات للمستثمرين</h3>
+        <p id="s6Text">
+          مساعدة المستثمرين في تقييم الفرص وبناء خطط الدخول والتوسع والنمو.
+        </p>
+      </div>
+
+      <div class="service">
+        <span class="service-number">07</span>
+        <h3 id="s7Title">الحوكمة والأنظمة الداخلية</h3>
+        <p id="s7Text">
+          تطوير السياسات والإجراءات والحوكمة ورفع مستوى التنظيم المؤسسي.
+        </p>
+      </div>
+
+      <div class="service">
+        <span class="service-number">08</span>
+        <h3 id="s8Title">تطوير الشركات</h3>
+        <p id="s8Text">
+          دعم الشركات في مراحل النمو وإعادة التنظيم والاستعداد للتوسع.
+        </p>
+      </div>
+
+      <div class="service">
+        <span class="service-number">09</span>
+        <h3 id="s9Title">المتابعة والتطوير المستمر</h3>
+        <p id="s9Text">
+          متابعة تنفيذ الخطط والمبادرات وقياس الأداء واقتراح التحسينات.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- SECTORS -->
+<section class="sectors" id="sectors">
+  <div class="container">
+
+    <div class="section-title">
+      <small id="sectorsSmall">TARGET SECTORS</small>
+      <h2 id="sectorsTitle">القطاعات والفئات المستهدفة</h2>
+      <p id="sectorsIntro">
+        نقدم حلولاً مرنة تناسب احتياجات مختلف العملاء والقطاعات.
+      </p>
+    </div>
+
+    <div class="sector-grid">
+      <div class="sector" id="sector1">رواد الأعمال</div>
+      <div class="sector" id="sector2">المؤسسات والمنشآت</div>
+      <div class="sector" id="sector3">الشركات</div>
+      <div class="sector" id="sector4">المستثمرون</div>
+      <div class="sector" id="sector5">الشركات العائلية</div>
+      <div class="sector" id="sector6">القطاع الصناعي</div>
+      <div class="sector" id="sector7">القطاع التجاري</div>
+      <div class="sector" id="sector8">المشاريع الجديدة</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- APPROACH -->
+<section id="approach">
+  <div class="container">
+
+    <div class="section-title">
+      <small id="approachSmall">OUR APPROACH</small>
+      <h2 id="approachTitle">منهجية العمل</h2>
+      <p id="approachIntro">
+        نعمل وفق منهجية واضحة تبدأ بالفهم والتحليل وتنتهي بالمتابعة والتطوير.
+      </p>
+    </div>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-number">01</div>
+        <h3 id="step1Title">الدراسة</h3>
+        <p id="step1Text">
+          فهم المشروع والوضع الحالي وتحديد الاحتياجات والفرص.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">02</div>
+        <h3 id="step2Title">التخطيط</h3>
+        <p id="step2Text">
+          إعداد الاستراتيجيات والخطط المناسبة للأهداف المحددة.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">03</div>
+        <h3 id="step3Title">التنفيذ والتطوير</h3>
+        <p id="step3Text">
+          تحويل الخطط إلى إجراءات عملية ومبادرات قابلة للتنفيذ.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">04</div>
+        <h3 id="step4Title">المتابعة</h3>
+        <p id="step4Text">
+          متابعة الأداء وقياس النتائج والتحسين المستمر.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- WHY MURTAKIZ -->
+<section class="why">
+  <div class="container">
+
+    <div class="section-title">
+      <small id="whySmall">WHY MURTAKIZ</small>
+      <h2 id="whyTitle">لماذا مرتـكز؟</h2>
+      <p id="whyIntro">
+        لأننا لا نقدم توصيات فقط، بل نركز على بناء حلول عملية قابلة للتطبيق.
+      </p>
+    </div>
+
+    <div class="why-grid">
+
+      <div class="why-item">
+        <h3 id="why1Title">رؤية متكاملة</h3>
+        <p id="why1Text">
+          ننظر إلى المشروع من الجوانب الاستراتيجية والتنظيمية والتشغيلية والتسويقية.
+        </p>
+      </div>
+
+      <div class="why-item">
+        <h3 id="why2Title">حلول مخصصة</h3>
+        <p id="why2Text">
+          نصمم الحلول وفق طبيعة المشروع ومرحلة النمو واحتياجات العميل.
+        </p>
+      </div>
+
+      <div class="why-item">
+        <h3 id="why3Title">تركيز على النمو</h3>
+        <p id="why3Text">
+          نركز على بناء أسس تساعد المنشآت على الاستدامة والتوسع والمنافسة.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+
+    <div class="contact-box">
+
+      <h2 id="contactTitle">لنبدأ بتطوير أعمالك</h2>
+
+      <p id="contactText">
+        أخبرنا عن مشروعك أو احتياجك، وسنساعدك على تحديد الخطوة المناسبة.
+      </p>
+
+      <div class="buttons" style="justify-content:center;">
+        <a href="mailto:info@murtakiz.com" class="btn btn-primary" id="emailButton">
+          تواصل معنا
+        </a>
+
+        <a href="#home" class="btn" style="border:1px solid #123f32;color:#123f32;" id="topButton">
+          العودة للأعلى
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+
+    <div class="footer-content">
+
+      <div class="footer-brand">
+        <strong>مرتـكز | MURTAKIZ</strong>
+        <p id="footerText">
+          للاستشارات وتطوير الأعمال وبناء الكيانات التجارية والاستثمارية.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#about" id="footerAbout">من نحن</a>
+        <a href="#services" id="footerServices">خدماتنا</a>
+        <a href="#sectors" id="footerSectors">القطاعات</a>
+        <a href="#contact" id="footerContact">تواصل معنا</a>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 MURTAKIZ. All Rights Reserved.
+    </div>
+
+  </div>
+</footer>
+
+
+<script>
+
+  let english = false;
+
+  function toggleLanguage() {
+
+    english = !english;
+
+    document.body.classList.toggle("en", english);
+    document.documentElement.lang = english ? "en" : "ar";
+    document.documentElement.dir = english ? "ltr" : "rtl";
+
+    document.getElementById("languageButton").textContent =
+      english ? "العربية" : "English";
+
+    if (english) {
+
+      document.getElementById("brandName").textContent = "MURTAKIZ";
+
+      document.getElementById("heroEyebrow").textContent =
+        "CONSULTING & BUSINESS DEVELOPMENT";
+
+      document.getElementById("heroTitle").innerHTML =
+        "MURTAKIZ<br><span>Building Foundations, Driving Growth</span>";
+
+      document.getElementById("heroSubtitle").textContent =
+        "Strategic solutions for building and developing businesses and investment entities";
+
+      document.getElementById("heroText").textContent =
+        "We help individuals, organizations, companies, and investors turn ideas and opportunities into successful businesses through integrated solutions covering assessment, planning, development, restructuring, growth, and sustainability.";
+
+      document.getElementById("heroButton1").textContent = "Request a Consultation";
+      document.getElementById("heroButton2").textContent = "Explore Our Services";
+
+      document.getElementById("aboutSmall").textContent = "ABOUT MURTAKIZ";
+      document.getElementById("aboutTitle").textContent = "About Us";
+      document.getElementById("aboutIntro").textContent =
+        "A strategic partner in business development and institutional growth.";
+
+      document.getElementById("aboutHeading").textContent =
+        "Building the foundation for sustainable growth";
+
+      document.getElementById("aboutP1").textContent =
+        "Murtakiz is a specialized consulting and business development firm providing practical solutions that help clients develop their businesses and achieve their objectives.";
+
+      document.getElementById("aboutP2").textContent =
+        "We support individuals, organizations, companies, and local and international investors throughout different stages of their business journey, from opportunity assessment and planning to restructuring, development, and expansion.";
+
+      document.getElementById("visionTitle").textContent = "Our Vision";
+      document.getElementById("visionText").textContent =
+        "To become a trusted strategic partner in business development and building stronger, more efficient, and sustainable organizations.";
+
+      document.getElementById("missionTitle").textContent = "Our Mission";
+      document.getElementById("missionText").textContent =
+        "To empower clients to make better decisions and build well-organized businesses capable of sustainable growth and competition.";
+
+      document.getElementById("servicesSmall").textContent = "OUR SERVICES";
+      document.getElementById("servicesTitle").textContent = "Our Services";
+      document.getElementById("servicesIntro").textContent =
+        "Integrated solutions covering different stages of business development.";
+
+      const services = [
+        ["Business Development","Developing business strategies, commercial opportunities, and growth plans."],
+        ["Business & Investment Studies","Assessing projects and investment opportunities, including feasibility and risk analysis."],
+        ["Restructuring & Organizational Development","Developing organizational structures, internal systems, and operational efficiency."],
+        ["Institutional Transformation","Supporting organizations through transformation, growth, and institutional development."],
+        ["Strategic & Operational Planning","Preparing strategic, operational, and marketing plans aligned with business objectives."],
+        ["Investor Consulting","Supporting investors in evaluating opportunities and developing entry and expansion strategies."],
+        ["Governance & Internal Systems","Developing policies, procedures, governance frameworks, and organizational systems."],
+        ["Corporate Development","Supporting companies through growth, restructuring, and expansion stages."],
+        ["Continuous Development & Monitoring","Monitoring plans, measuring performance, and identifying improvement opportunities."]
+      ];
+
+      for(let i=1;i<=9;i++){
+        document.getElementById("s"+i+"Title").textContent = services[i-1][0];
+        document.getElementById("s"+i+"Text").textContent = services[i-1][1];
+      }
+
+      document.getElementById("sectorsSmall").textContent = "TARGET SECTORS";
+      document.getElementById("sectorsTitle").textContent = "Target Sectors & Clients";
+      document.getElementById("sectorsIntro").textContent =
+        "Flexible solutions designed for different clients and business sectors.";
+
+      const sectors = [
+        "Entrepreneurs",
+        "Organizations & SMEs",
+        "Companies",
+        "Investors",
+        "Family Businesses",
+        "Industrial Sector",
+        "Commercial Sector",
+        "New Projects"
+      ];
+
+      for(let i=1;i<=8;i++){
+        document.getElementById("sector"+i).textContent = sectors[i-1];
+      }
+
+      document.getElementById("approachSmall").textContent = "OUR APPROACH";
+      document.getElementById("approachTitle").textContent = "Our Approach";
+      document.getElementById("approachIntro").textContent =
+        "A clear methodology that starts with understanding and analysis and ends with continuous improvement.";
+
+      const steps = [
+        ["Assessment","Understanding the business, current situation, needs, and opportunities."],
+        ["Planning","Developing strategies and plans aligned with defined objectives."],
+        ["Implementation & Development","Turning plans into practical and actionable initiatives."],
+        ["Monitoring","Measuring performance, reviewing results, and continuously improving."]
+      ];
+
+      for(let i=1;i<=4;i++){
+        document.getElementById("step"+i+"Title").textContent = steps[i-1][0];
+        document.getElementById("step"+i+"Text").textContent = steps[i-1][1];
+      }
+
+      document.getElementById("whySmall").textContent = "WHY MURTAKIZ";
+      document.getElementById("whyTitle").textContent = "Why Murtakiz?";
+      document.getElementById("whyIntro").textContent =
+        "We do not only provide recommendations; we focus on building practical and applicable solutions.";
+
+      document.getElementById("why1Title").textContent = "Integrated Perspective";
+      document.getElementById("why1Text").textContent =
+        "We look at businesses from strategic, organizational, operational, and marketing perspectives.";
+
+      document.getElementById("why2Title").textContent = "Customized Solutions";
+      document.getElementById("why2Text").textContent =
+        "Solutions are designed according to the nature of the business, its growth stage, and client needs.";
+
+      document.getElementById("why3Title").textContent = "Growth Focus";
+      document.getElementById("why3Text").textContent =
+        "We focus on building foundations that support sustainability, expansion, and competitiveness.";
+
+      document.getElementById("contactTitle").textContent =
+        "Let's Develop Your Business";
+
+      document.getElementById("contactText").textContent =
+        "Tell us about your project or business needs, and we will help you identify the right next step.";
+
+      document.getElementById("emailButton").textContent = "Contact Us";
+      document.getElementById("topButton").textContent = "Back to Top";
+
+      document.getElementById("footerText").textContent =
+        "Consulting, business development, and building commercial and investment entities.";
+
+      document.getElementById("footerAbout").textContent = "About Us";
+      document.getElementById("footerServices").textContent = "Services";
+      document.getElementById("footerSectors").textContent = "Sectors";
+      document.getElementById("footerContact").textContent = "Contact";
+
+    } else {
+
+      location.reload();
+
+    }
+  }
+
+</script>
+
+</body>
+</html>
